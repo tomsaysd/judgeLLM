@@ -25,8 +25,6 @@ flowchart TD
 
 
 
-&#x20;   %% UI Layer
-
 &#x20;   subgraph UI\["User Interface Layer (Streamlit - app.py)"]
 
 &#x20;       A1\["Screen 1: Input Prompt"]
@@ -41,8 +39,6 @@ flowchart TD
 
 
 
-&#x20;   %% Orchestrator Layer
-
 &#x20;   subgraph ORCH\["Orchestrator Layer (pipeline/)"]
 
 &#x20;       B1\["Response Generator (generator.py)"]
@@ -53,8 +49,6 @@ flowchart TD
 
 
 
-&#x20;   %% API Layer
-
 &#x20;   subgraph API\["API Client Layer"]
 
 &#x20;       C1\["OpenRouter Client Adapter"]
@@ -62,8 +56,6 @@ flowchart TD
 &#x20;   end
 
 
-
-&#x20;   %% External Models
 
 &#x20;   subgraph MODELS\["External LLMs (via OpenRouter)"]
 
@@ -76,8 +68,6 @@ flowchart TD
 &#x20;   end
 
 
-
-&#x20;   %% Flow
 
 &#x20;   A2 --> B1
 
@@ -93,9 +83,13 @@ flowchart TD
 
 &#x20;   D3 --> A3
 
-&#x20;   B1 --> C1
 
-&#x20;   B2 --> C1
+
+
+
+
+
+
 
 ## Tech Stack
 
