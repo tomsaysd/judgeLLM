@@ -35,11 +35,11 @@ graph TD
 
 &#x20;   E --> F
 
-&#x20;   F --> G\["Judge Engine"]
+&#x20;   F --> G\["Claude Judge"]
 
-&#x20;   G --> H\["Claude 3 Haiku"]
+&#x20;   G --> H\["Final Result"]
 
-&#x20;   H --> I\["Final Judgment"]
+
 
 ## Tech Stack
 
