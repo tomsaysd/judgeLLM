@@ -17,45 +17,29 @@ An intelligent web application that compares responses from different Large Lang
 
 ## Architecture
 
-\## Architecture Diagram
-
 
 
 ```mermaid
 
 graph TD
 
-&#x20;   A\[User Input] --> B\[Streamlit UI]
+&#x20;   A\["User Input"] --> B\["Streamlit UI"]
 
-&#x20;   B --> C\[Response Generator]
+&#x20;   B --> C\["Response Generator"]
 
-&#x20;   C --> D\[GPT-4o-mini]
+&#x20;   C --> D\["GPT-4o-mini"]
 
-&#x20;   C --> E\[Gemini 3 Flash]
+&#x20;   C --> E\["Gemini 3 Flash"]
 
-&#x20;   D --> F\[Display Responses]
+&#x20;   D --> F\["Display Responses"]
 
 &#x20;   E --> F
 
-&#x20;   F --> G\[Judge Engine]
+&#x20;   F --> G\["Judge Engine"]
 
-&#x20;   G --> H\[Claude 3 Haiku]
+&#x20;   G --> H\["Claude 3 Haiku"]
 
-&#x20;   H --> I\[Final Judgment]
-
-&#x20;   
-
-&#x20;   style A fill:#667eea,stroke:#333,stroke-width:2px
-
-&#x20;   style B fill:#f093fb,stroke:#333,stroke-width:2px
-
-&#x20;   style C fill:#4ecdc4,stroke:#333,stroke-width:2px
-
-&#x20;   style G fill:#4ecdc4,stroke:#333,stroke-width:2px
-
-&#x20;   style I fill:#ff6b6b,stroke:#333,stroke-width:2px
-
-```
+&#x20;   H --> I\["Final Judgment"]
 
 ## Tech Stack
 
