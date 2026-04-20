@@ -21,27 +21,81 @@ An intelligent web application that compares responses from different Large Lang
 
 ```mermaid
 
-graph TD
-
-&#x20;   A\["User Input"] --> B\["Streamlit UI"]
-
-&#x20;   B --> C\["Response Generator"]
-
-&#x20;   C --> D\["GPT-4o-mini"]
-
-&#x20;   C --> E\["Gemini 3 Flash"]
-
-&#x20;   D --> F\["Display Responses"]
-
-&#x20;   E --> F
-
-&#x20;   F --> G\["Claude Judge"]
-
-&#x20;   G --> H\["Final Result"]
+flowchart TD
 
 
 
+&#x20;   %% UI Layer
 
+&#x20;   subgraph UI\["User Interface Layer (Streamlit - app.py)"]
+
+&#x20;       A1\["Screen 1: Input Prompt"]
+
+&#x20;       A2\["Screen 2: View Responses"]
+
+&#x20;       A3\["Screen 3: Final Judge"]
+
+&#x20;       A1 --> A2 --> A3
+
+&#x20;   end
+
+
+
+&#x20;   %% Orchestrator Layer
+
+&#x20;   subgraph ORCH\["Orchestrator Layer (pipeline/)"]
+
+&#x20;       B1\["Response Generator (generator.py)"]
+
+&#x20;       B2\["Judge Engine (judge.py)"]
+
+&#x20;   end
+
+
+
+&#x20;   %% API Layer
+
+&#x20;   subgraph API\["API Client Layer"]
+
+&#x20;       C1\["OpenRouter Client Adapter"]
+
+&#x20;   end
+
+
+
+&#x20;   %% External Models
+
+&#x20;   subgraph MODELS\["External LLMs (via OpenRouter)"]
+
+&#x20;       D1\["GPT-4o-mini (OpenAI)"]
+
+&#x20;       D2\["Gemini 3 Flash (Google)"]
+
+&#x20;       D3\["Claude 3 Haiku (Anthropic)"]
+
+&#x20;   end
+
+
+
+&#x20;   %% Flow
+
+&#x20;   A2 --> B1
+
+&#x20;   B1 --> D1
+
+&#x20;   B1 --> D2
+
+&#x20;   D1 --> B2
+
+&#x20;   D2 --> B2
+
+&#x20;   B2 --> D3
+
+&#x20;   D3 --> A3
+
+&#x20;   B1 --> C1
+
+&#x20;   B2 --> C1
 
 ## Tech Stack
 
