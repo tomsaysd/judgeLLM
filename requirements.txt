@@ -1,0 +1,8 @@
+# Web Framework
+streamlit==1.56.0
+
+# LLM API Client
+openai==1.30.0
+
+# Environment Variables
+python-dotenv==1.0.0
